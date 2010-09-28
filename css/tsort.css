@@ -1,0 +1,130 @@
+
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;		
+}
+
+.t-wpr {
+	overflow:hidden;
+	-moz-user-select:none; 
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	user-select: none;
+}
+
+/* temp hack for opera, needs a move to browser-specific js */
+.t-wpr ::selection {
+    background-color: transparent;
+}
+
+.t-hd-wpr {
+	overflow:hidden;	
+}
+
+.t-bd-wpr {
+	overflow:auto;
+}
+
+.t-hd,
+.t-bd {
+	table-layout:fixed;
+}
+
+.t-hd th,
+.t-bd td {
+	overflow:hidden;
+	white-space:nowrap; 
+	white-space:pre !ie6/7; /* white space nowrap fails in IE6/7, hence this hack */
+	text-overflow:ellipsis;	
+	-o-text-overflow:ellipsis;	
+	/*-moz-binding: url( 'bindings.xml#ellipsis' ); */
+	padding:0 5px;
+	cursor:pointer;
+}
+
+
+.t-hd th /* fixes background blinking */ 
+{
+	height:16px;
+	background:url(../img/bg.png) repeat-x 0px -500px;	
+	border-right:1px solid #BCBCBC;
+	text-align:center;
+	font-weight:bold;
+	cursor:pointer;
+	padding-right:3px;
+}
+
+.t-hd th.ui-sortable-helper,
+.t-hd th.ui-sortable-helper:hover {
+	background-position:0px -500px;
+}
+
+
+.t-hd th.t-selected,  /* fixes background blinking */
+.t-hd th:hover {
+	background-position:0px -516px;
+}
+
+.t-hd th.t-selected {
+	cursor:col-resize; /* fixes cursor blinking */
+}
+
+.t-hd th.t-placeholder {
+	background-position:0px -532px;
+}
+
+.t-bd {
+	background:url(../img/bg_grid.png);	
+}
+
+.t-bd td {
+	height:18px;
+    border-right:1px solid #ddd;	
+}
+
+.t-bd .t-selected {
+	background:#3d80df;
+    color:#fff;	
+}
+
+
+/* resize */
+.t-hd-resizer {
+	float:right;
+	height:100%;
+	margin:-2px -5px -2px 0;
+	cursor:col-resize;
+}
+
+#t-hd-resize-helper {
+	position:absolute;
+	border:1px solid #777;
+	cursor:col-resize;
+}
+
+.t-hidden * {
+	display:none;	
+}
+
+/* sort rows */
+#t-dragged {
+	width:44px;
+    height:45px;
+    background:url(../img/dragged.png) no-repeat center;	
+}
+
+#t-dragged div {
+    position:absolute;
+    top:25px;
+    left:21px;
+    width:18px;
+    height:10px;
+    line-height:10px;
+    color:#fff;
+    font-weight:bold;
+    text-align:center;
+}
+
+.t-bd .t-insert-after-me td {
+	border-bottom:2px solid #000;	 
+}

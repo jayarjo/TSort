@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="js/requisites.js"></script>
+<title>Untitled Document</title>
+</head>
+
+<style>
+table {
+	table-layout:fixed;
+	border-collapse:collapse;	
+}
+
+td, th {
+	overflow:hidden;
+	white-space:pre;	
+}
+</style>
+
+<body>
+
+
+<table id="table1" cellpadding="0" cellspacing="0" border="1" style="width:400px">
+<thead>
+<tr>
+	<th style="width:100px">Column 1</th>
+    <th style="width:300px">Column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Content 1Content 1Content 1Content 1Content 1Content 1Content 1Content 1</td>
+    <td>Content 2</td>
+</tr>
+</tbody>
+</table>
+
+
+<button onclick="resizeCol()">Click Me</button>
+
+<script>
+function resizeCol()
+{
+
+	$('#table1').css('table-layout', 'auto');
+	$('#table1 thead th:first').width(150);
+	$('#table1').width(450);
+	$('#table1').css('table-layout', 'fixed');
+}
+	
+</script>
+
+
+<table id="table2" cellpadding="0" cellspacing="0" border="1" width="400">
+	<col width="100">
+    <col width="300">
+<tbody>
+	<td>Content 1</td>
+    <td>Content 2</td>
+</tbody>
+</table>
+
+
+<button onclick="$('#table2').hide();$('#table2 thead col:first').width(200);$('#table2').width(500);$('#table2').show();">Click Me</button>
+
+</body>
+</html>
